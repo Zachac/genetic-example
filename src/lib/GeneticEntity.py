@@ -10,3 +10,6 @@ class GeneticEntity:
         """ Return a new instance of this class that is the result
             of mating these two instances """
         raise NotImplementedError("Please Implement this method")
+
+    def __lt__(self, other):
+        return self.fitness() < other.fitness()

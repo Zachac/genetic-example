@@ -1,5 +1,6 @@
 
 import random
+import heapq
 
 class Population:
 
@@ -27,8 +28,7 @@ class Population:
         return {"avg": totalFitness/totalCount, "max": maxFitness}
 
     def cullGeneration(self):
-        """ retain only the top survivors for this generation """
-        raise NotImplementedError("Please Implement this method")
+        self.currentGenerataion = heapq.nlargest(self.survivors, self.currentGenerataion)
 
     def mateGeneration(self):
         generation = self.currentGenerataion
