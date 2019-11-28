@@ -2,7 +2,7 @@ import random
 
 from lib.GeneticEntity import GeneticEntity
 
-wheights = [0.9, -0.4, -0.8, 0.6, -0.4, 0.1]
+wheights = [1, -1, -1, 1, -1, 1]
 
 class WheightedGeneticEntity(GeneticEntity):
     
@@ -32,7 +32,7 @@ class WheightedGeneticEntity(GeneticEntity):
             else:
                 selectedGene = other.genes[i]
 
-            if random.random() < 0.1:
+            if random.random() < 0.01:
                 selectedGene = random.uniform(-1, 1)
 
             newGenes.append(selectedGene)
