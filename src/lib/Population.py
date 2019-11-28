@@ -10,11 +10,21 @@ class Population:
         for i in range(self.survivors):
             self.currentGenerataion.append(clazz())
 
-        self.mateGeneration()
+        # self.mateGeneration()
     
     def stats(self):
-        """ get avg & max fitness stats """
-        raise NotImplementedError("Please Implement this method")
+        totalCount = len(self.currentGenerataion)
+        totalFitness = 0
+        maxFitness = self.currentGenerataion[0].fitness()
+
+        for v in self.currentGenerataion:
+            totalFitness += v.fitness()
+            if v.fitness() >  maxFitness:
+                maxFitness = v.fitness()
+        
+        return {"avg": totalFitness/totalCount, "max": maxFitness}
+        
+
 
     def cullGeneration(self):
         """ retain only the top survivors for this generation """
