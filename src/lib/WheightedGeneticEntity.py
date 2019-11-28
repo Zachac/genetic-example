@@ -32,7 +32,7 @@ class WheightedGeneticEntity(GeneticEntity):
             else:
                 selectedGene = other.genes[i]
 
-            if random.random() < 0.01:
+            if random.random() < 0.05:
                 selectedGene = random.uniform(-1, 1)
 
             newGenes.append(selectedGene)
